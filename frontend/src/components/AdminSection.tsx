@@ -46,7 +46,7 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
   useEffect(() => {
     const fetchWork = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/work');
+        const response = await fetch('https://ufxeren.pythonanywhere.com/api/work');
         const data = await response.json();
         // data is already sorted by backend, so we just set it
         setWorkItems(data);
@@ -61,7 +61,7 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/messages');
+        const response = await fetch('https://ufxeren.pythonanywhere.com/api/messages');
         if (response.ok) {
           const data = await response.json();
           setMessages(data);
@@ -80,7 +80,7 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/login', {
+      const response = await fetch('https://ufxeren.pythonanywhere.com/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password })
@@ -120,14 +120,14 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
     formData.append('file', uploadForm.imageFile);
 
     try {
-      const response = await fetch('http://localhost:5000/api/work', {
+      const response = await fetch('https://ufxeren.pythonanywhere.com/api/work', {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
         // Refresh the list from the server to get the REAL URLs
-        const res = await fetch('http://localhost:5000/api/work');
+        const res = await fetch('https://ufxeren.pythonanywhere.com/api/work');
         const data = await res.json();
         setWorkItems(data);
 
@@ -146,7 +146,7 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
 
     try {
       // 1. Send delete request to the Flask backend
-      const response = await fetch(`http://localhost:5000/api/work/${id}`, {
+      const response = await fetch(`https://ufxeren.pythonanywhere.com/api/work/${id}`, {
         method: 'DELETE',
       });
 
@@ -170,7 +170,7 @@ export function AdminSection({ onWorkItemsChange, initialItems = [] }: AdminSect
     if (!window.confirm("Are you sure you want to delete this message and its attachments?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/messages/${id}`, {
+      const response = await fetch(`https://ufxeren.pythonanywhere.com/api/messages/${id}`, {
         method: 'DELETE',
       });
 

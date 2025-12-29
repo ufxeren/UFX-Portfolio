@@ -15,7 +15,7 @@ export function WorkSection() {
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/work')
+    fetch('https://ufxeren.pythonanywhere.com/api/work')
       .then(res => res.json())
       .then(data => setWorkItems(data))
       .catch(err => console.error("Error fetching work:", err));
