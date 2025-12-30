@@ -5,7 +5,7 @@
 
   export default defineConfig({
     plugins: [react()],
-    base: './',
+    base: '/UFX-Portfolio/',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
