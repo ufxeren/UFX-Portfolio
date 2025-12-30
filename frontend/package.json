@@ -1,6 +1,6 @@
 {
       "homepage": "https://ufxeren.github.io/UFX-Portfolio",
-      "name": "Convert Figma Design to Code",
+      "name": "UFX - Portfolio",
       "version": "0.1.0",
       "private": true,
       "dependencies": {
@@ -59,6 +59,6 @@
             "dev": "vite",
             "build": "vite build",
             "preview": "vite preview",
-            "deploy": "gh-pages -d dist"
+            "deploy": "gh-pages -d build"
       }
 }
