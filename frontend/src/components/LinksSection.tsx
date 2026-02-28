@@ -83,7 +83,7 @@ export function LinksSection() {
       data.append('attachments', file);
     });
 
-    const response = await fetch('http://localhost:5000/api/messages', {
+    const response = await fetch('https://ufxeren.pythonanywhere.com/api/messages', {
       method: 'POST',
       body: data
     });
@@ -112,7 +112,7 @@ export function LinksSection() {
         </motion.div>
       )}
 
-      <div className="container mx-auto px-4 lg:px-16 relative z-10">
+      <div className="container mx-auto px-4 lg:px-16 relative z-10 mb-24">
         {/* Title */}
         <motion.div
           className="text-center mb-16"
@@ -344,7 +344,7 @@ export function LinksSection() {
                   className="text-black text-[14px] lg:text-[16px] font-semibold tracking-[1.28px]"
                   style={{ fontFamily: "'Roboto', sans-serif" }}
                 >
-                  +92 00000000000
+                  +92 00000000
                 </span>
               </div>
             </motion.div>
